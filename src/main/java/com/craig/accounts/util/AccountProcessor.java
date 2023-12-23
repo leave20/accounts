@@ -12,17 +12,15 @@ public class AccountProcessor {
 
     private static final Random random = new Random();
     private AccountProcessor(){
-
     }
 
     public static Account createNewAccount(Customer customer){
-        Account newAccount= new Account();
-
-        newAccount.setCustomerId(customer.getCustomerId());
         long randomAccNumber=1000000000L+random.nextInt(900000000);
-        newAccount.setAccountNumber(randomAccNumber);
-        newAccount.setAccountType(SAVINGS);
-        newAccount.setBranchAddress(ADDRESS);
-        return newAccount;
+        return new Account(
+                customer.getCustomerId(),
+                randomAccNumber,
+                SAVINGS,
+                ADDRESS
+        );
     }
 }

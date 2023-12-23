@@ -5,10 +5,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Data
+@NoArgsConstructor
 public class Account extends BaseEntity{
 
     @Column(name = "customer_id")
@@ -23,4 +25,11 @@ public class Account extends BaseEntity{
 
     @Column(name = "branch_address")
     private String branchAddress;
+
+    public Account(Long customerId, Long randomAccNumber, String savings, String address) {
+        this.customerId = customerId;
+        this.accountNumber =randomAccNumber;
+        this.accountType = savings;
+        this.branchAddress = address;
+    }
 }

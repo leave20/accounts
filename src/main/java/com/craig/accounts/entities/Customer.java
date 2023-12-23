@@ -3,7 +3,6 @@ package com.craig.accounts.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Generated;
 import org.hibernate.annotations.GenericGenerator;
 
 @EqualsAndHashCode(callSuper = true)
