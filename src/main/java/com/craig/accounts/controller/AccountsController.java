@@ -29,7 +29,7 @@ import static org.springframework.http.HttpStatus.OK;
         description = "Accounts API v1.0 - Create, Fetch, Update and Delete Accounts"
 )
 @RestController
-@RequestMapping(path = "/api", produces = {MediaType.APPLICATION_JSON_VALUE})
+@RequestMapping(path = "/api/accounts", produces = {MediaType.APPLICATION_JSON_VALUE})
 @AllArgsConstructor
 @Validated
 public class AccountsController {
