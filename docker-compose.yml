@@ -1,0 +1,39 @@
+services:
+  accounts:
+    image: "kenisito/accounts:keniaccounts"
+    container_name: accounts-ms
+    ports:
+      - "9001:9001"
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+    networks:
+      - keni-network
+
+  cards:
+    image: "kenisito/cards:kenicards"
+    container_name: cards-ms
+    ports:
+      - "9002:9002"
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+    networks:
+      - keni-network
+
+  loans:
+    image: "kenisito/loans:keniloans"
+    container_name: loans-ms
+    ports:
+      - "9003:9003"
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+    networks:
+      - keni-network
+networks:
+  keni-network:
+    driver: bridge
